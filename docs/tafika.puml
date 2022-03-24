@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Grade {
+    -String name
+    -String code
+    +String getName()
+    +String setName()
+    +String getCode()
+    +String setCode()
+}
+
+class Lieu {
+    -String name
+    +String getName()
+    +String setName()
+    +Array getGradeOccurence()
+}
+
+class Personnel {
+    -String firstName
+    -String lastName
+    +String getFirstName()
+    +String setFirstName()
+    +String getLastName()
+    +String setLastName()
+}
+
+Grade ||--|{ Personnel
+Lieu ||--|{ Personnel
+
+'abstract class AbstractList
+'abstract AbstractCollection
+'interface List
+'interface Collection
+'
+'List <|-- AbstractList
+'Collection <|-- AbstractCollection
+'
+'Collection <|- List
+'AbstractCollection <|- AbstractList
+'AbstractList <|-- ArrayList
+'
+'class ArrayList {
+'Object[] elementData
+'size()
+'}
+'
+'enum TimeUnit {
+'DAYS
+'HOURS
+'MINUTES
+'}
+
+@enduml
