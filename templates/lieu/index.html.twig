@@ -20,13 +20,11 @@
                 <td>{{ lieu.id }}</td>
                 <td>{{ lieu.name }}</td>
                 <td>
-                    {{ dump(lieu.numberPerGrade) }}
-{#                    {% for values in lieu.numberPerGrade %}#}
-{#                        {% for value in values %}#}
-{#                            {{ value }}#}
-{#                        {% endfor %}#}
-{#                        ||#}
-{#                    {% endfor %}#}
+                    {% if lieu.numberPerGrade is defined %}
+                        {% for value in lieu.getNumberPerGrade %}
+                            <p>{{ value.code }} : {{ value.number }}</p>
+                        {% endfor %}
+                    {% endif %}
                 </td>
                 <td>
                     <a href="{{ path('app_lieu_show', {'id': lieu.id}) }}">show</a>

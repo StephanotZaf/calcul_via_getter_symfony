@@ -78,7 +78,7 @@ class Lieu
         return $this;
     }
 
-    public function numberPerGrade(): array {
+    public function getNumberPerGrade(): array {
         $personnels = $this->getPersonnels();
         $grades = [];
         if (is_null($personnels)) return [];
